@@ -1,0 +1,50 @@
+<div class="row ml-5 mr-5 mt-4 mb-3">
+    <h2 class="">Grafica Circular Ventas</h2>
+</div>
+
+<ng-select 
+    class="mr-5 ml-5"
+    [items]="dimensionName$ | async"
+    [multiple]="true"
+    [closeOnSelect]="true"
+    [searchable]="true"
+    placeholder="Seleccione uno o varios clientes..."
+    (change)="onChangeValues($event)"
+    [(ngModel)]="selectedDimensionName">
+</ng-select>
+
+<div class="row mr-5 ml-5">
+    
+    <div class="col">
+        <ng-select 
+            [items]="yearItem$ | async"
+            [multiple]="true"
+            placeholder="Seleccione un año..."
+            [closeOnSelect]="true"
+            [searchable]="true"
+            [(ngModel)]="selectedYear"
+            (change)="onChangeValues($event)">
+        </ng-select>
+    </div>
+    
+    <div class="col">
+        <ng-select 
+            [items]="monthItem$ | async"
+            [multiple]="true"
+            placeholder="Seleccione un mes..."
+            [closeOnSelect]="true"
+            [searchable]="true"
+            [(ngModel)]="selectedMonth"
+            (change)="onChangeValues($event)">
+        </ng-select>
+    </div>
+</div>
+
+<div class="ml-5 mr-5 mb-3">
+    <button (click)="clearModel()" class="btn btn-secondary btn-sm">Limpiar Selección</button>
+</div>
+
+<app-pie-chart
+    [pieChartLabels]="dataDimension"
+    [pieChartData]="dataValues">
+</app-pie-chart>

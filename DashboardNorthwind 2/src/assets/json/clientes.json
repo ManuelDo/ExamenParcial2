@@ -1,0 +1,22 @@
+[
+    {
+        "code":1,
+        "name": "Cliente 1"
+    },
+    {
+        "code":2,
+        "name": "Cliente 2"
+    },
+    {
+        "code":3,
+        "name": "Cliente 3"
+    },
+    {
+        "code":4,
+        "name": "Cliente 4"
+    },
+    {
+        "code":5,
+        "name": "Cliente 5"
+    }
+]
